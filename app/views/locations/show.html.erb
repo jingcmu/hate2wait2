@@ -10,7 +10,24 @@
   <%= @location.capacity %>
 </p>
 
-<%= render :partial=>"seat_list", :locals=>{:seats=>@location.seats} %>
+<div id="seats">
+  <%= render :partial=>"seat_list", :locals=>{:seats=>@location.seats} %>
+</div>
+
+<script>
+    $(document).ready(function(){
+        setInterval(updateSeats,3000);
+    });
+    function updateSeats(){
+        $.ajax({
+            url:  "/locations/<%= @location.id %>/seats",
+            type: "GET",
+        }).done(function(data){
+                    $("#seats").html(data);
+                });
+    }
+</script>
+
 <%= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:location_id=>@location.id)} %>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
