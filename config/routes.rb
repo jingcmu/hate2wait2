@@ -1,7 +1,10 @@
 Hate2wait2::Application.routes.draw do
+
   resources :seats
 
   resources :locations
+
+  match '/locations/:location_id/seats' => 'seats#location_seats'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
