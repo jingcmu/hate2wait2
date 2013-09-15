@@ -10,6 +10,8 @@
   <%= @location.capacity %>
 </p>
 
+<%= render :partial=>"seat_list", :locals=>{:seats=>@location.seats} %>
+<%= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:location_id=>@location.id)} %>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
