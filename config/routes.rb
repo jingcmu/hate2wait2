@@ -1,8 +1,12 @@
 Hate2wait2::Application.routes.draw do
 
+  devise_for :users
+
   resources :seats
 
   resources :locations
+
+  resources :users
 
   match '/locations/:location_id/seats' => 'seats#location_seats'
 
