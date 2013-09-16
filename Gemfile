@@ -37,6 +37,8 @@ end
 gem 'devise', '2.1.2'
 gem 'bcrypt-ruby', '~> 3.0'
 
+gem 'gmaps4rails', '1.5.6'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
