@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @locations }
+      format.xml { render xml: @locations }
     end
   end
 
@@ -18,6 +19,7 @@ class LocationsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @location }
+      format.xml { render xml: @location }
     end
   end
 
@@ -29,12 +31,19 @@ class LocationsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @location }
+      format.xml { render xml: @location }
     end
   end
 
   # GET /locations/1/edit
   def edit
     @location = Location.find(params[:id])
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @location }
+      format.xml { render xml: @location }
+    end
   end
 
   # POST /locations
@@ -46,11 +55,14 @@ class LocationsController < ApplicationController
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
         format.json { render json: @location, status: :created, location: @location }
+        format.xml { render xml: @location, status: :created, location: @location }
       else
         format.html { render action: "new" }
         format.json { render json: @location.errors, status: :unprocessable_entity }
+        format.xml { render xml: @location.errors, status: :unprocessable_entity }
       end
     end
+    flash[:notice] = 'A new location was created(Jacky)'
   end
 
   # PUT /locations/1
@@ -62,9 +74,11 @@ class LocationsController < ApplicationController
       if @location.update_attributes(params[:location])
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
         format.json { head :no_content }
+        format.xml { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @location.errors, status: :unprocessable_entity }
+        format.xml { render xml: @location.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -78,6 +92,7 @@ class LocationsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to locations_url }
       format.json { head :no_content }
+      #format.xml { head :no_content }
     end
   end
 end

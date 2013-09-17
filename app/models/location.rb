@@ -6,7 +6,7 @@ class Location < ActiveRecord::Base
 
   def self.Init_DB
     Location.destroy_all
-    Location.create(name: "SJSU" , capacity: 8175133)#, latitude: 0, longitude: 30)
+    Location.create(name: "New York" , capacity: 8175133)#, latitude: 0, longitude: 30)
 =begin
     #Location.create(name: "Los Angeles", capacity: 3792621 )
 
@@ -24,14 +24,13 @@ class Location < ActiveRecord::Base
 
   def gmaps4rails_address
     #"#{name}, 'San Jose,CA,USA'"   #this is wrong
-    "#{name}, San Jose,CA,USA"
+    "#{name}, USA"
   end
 
 end
 
 
 if Location.find_by_name("New York")
-  Location.Init_DB
 else
   Location.Init_DB
 end

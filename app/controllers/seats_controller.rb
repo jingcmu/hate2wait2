@@ -1,40 +1,31 @@
 class SeatsController < ApplicationController
   # GET /seats
   # GET /seats.json
+  respond_to :xml, :json, :html
+
   def index
     @seats = Seat.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @seats }
-    end
+    respond_with(@seats)
   end
 
   # GET /seats/1
   # GET /seats/1.json
   def show
     @seat = Seat.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @seat }
-    end
+    respond_with(@seat)
   end
 
   # GET /seats/new
   # GET /seats/new.json
   def new
     @seat = Seat.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @seat }
-    end
+    respond_with(@seat)
   end
 
   # GET /seats/1/edit
   def edit
     @seat = Seat.find(params[:id])
+    respond_with(@seat)
   end
 
   # POST /seats
@@ -85,8 +76,6 @@ class SeatsController < ApplicationController
     @location = Location.find(params[:location_id])
     render :partial => "locations/seat_list", :locals => {:seats=>@location.seats}
   end
-
-
 
 end
 
