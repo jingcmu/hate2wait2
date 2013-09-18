@@ -1,3 +1,5 @@
+require 'net/http'
+require 'rexml/document'
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
@@ -72,7 +74,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.update_attributes(params[:location])
-        format.html { redirect_to @location, notice: 'Location was successfully updated.' }
+        format.html { redirect_to locations_path, notice: 'Location was successfully updated.' }
         format.json { head :no_content }
         format.xml { head :no_content }
       else
@@ -93,6 +95,16 @@ class LocationsController < ApplicationController
       format.html { redirect_to locations_url }
       format.json { head :no_content }
       #format.xml { head :no_content }
+    end
+  end
+
+  #add by jacky
+  def list
+    @locations = Location.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @locations }
+      format.xml { render xml: @locations }
     end
   end
 end

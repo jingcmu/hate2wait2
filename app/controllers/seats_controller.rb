@@ -1,3 +1,4 @@
+require 'net/http'
 class SeatsController < ApplicationController
   # GET /seats
   # GET /seats.json

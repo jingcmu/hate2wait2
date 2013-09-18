@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
 
   # GET /users
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @user }
+      format.xml { render xml: @user }
     end
   end
 
@@ -83,3 +85,4 @@ class UsersController < ApplicationController
   end
 
 end
+
