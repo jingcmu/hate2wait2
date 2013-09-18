@@ -19,7 +19,8 @@ module LocationsHelper
         end
       end
     end
-=end
+
     number_of_seats
+=end
   end
 end
