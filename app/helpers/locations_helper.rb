@@ -5,7 +5,7 @@ require 'rexml/document'
 module LocationsHelper
   def get_seats_number(location_id)
     #url = URI.parse('http://localhost:3000/seats')
-    url = URI.parse('http://hate2wait2.herokuapp.com/seats')
+    url = URI.parse('http://hate2wait.herokuapp.com/seats')
 =begin
     xml_data = Net::HTTP.get_response(url).body
     hash_data = Hash.from_xml(xml_data)
