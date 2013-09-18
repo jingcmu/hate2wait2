@@ -6,6 +6,7 @@ module LocationsHelper
   def get_seats_number(location_id)
     #url = URI.parse('http://localhost:3000/seats')
     url = URI.parse('http://hate2wait2.herokuapp.com/seats')
+=begin
     xml_data = Net::HTTP.get_response(url).body
     hash_data = Hash.from_xml(xml_data)
     json_data = hash_data.to_json
@@ -19,5 +20,6 @@ module LocationsHelper
       end
     end
     number_of_seats
+=end
   end
 end
