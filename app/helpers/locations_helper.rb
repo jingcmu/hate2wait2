@@ -11,6 +11,7 @@ module LocationsHelper
     json_data = hash_data.to_json
     number_of_seats = 0
     seats = hash_data["seats"]
+=begin
     seats.each do |seat|
       seat.each do |key, value|
         if key.to_s == 'location_id' and value == location_id
@@ -18,6 +19,7 @@ module LocationsHelper
         end
       end
     end
+=end
     number_of_seats
   end
 end
