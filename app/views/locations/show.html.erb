@@ -1,17 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Location Name(address):</b>
   <%= @location.name %>
 </p>
 
 <p>
   <b>Capacity:</b>
-  <%= @location.capacity %>
+  <b> <%= @location.capacity %> </b>
 </p>
 
 <p>
-  <%= get_seats_number(@location.id) %> seats has been taken! <br>
+  <b><%= get_seats_number %></b>
+  seats has been taken! <br>
+</p>
+
+<p>
+  <b><%= get_left_seats %></b>
+  seats are available! <br>
 </p>
 
 <div id="seats">

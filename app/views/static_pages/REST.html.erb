@@ -1,0 +1,16 @@
+<% provide(:title, 'Show Restful Api') %>
+<% provide(:address, 'http://hate2wait2.herokuapp.com') %>
+<!--  'http://hate2wait2.herokuapp.com/seats'  -->
+<h2>(This page shows http request from outside)</h2>
+<h3>visiting <%= yield(:address) %> ... </h3>
+</br>
+</br>
+<h3> XML format </h3>
+<p> <%= show_HTTP_get(yield(:address), 'xml') %> </p>
+</br>
+<h3> JSON format </h3>
+<p> <%= show_HTTP_get(yield(:address), 'json') %> </p>
+</br>
+<h3> HASH format </h3>
+<p> <%= show_HTTP_get(yield(:address), 'hash') %> </p>
+</br>
