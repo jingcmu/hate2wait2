@@ -7,9 +7,9 @@ Hate2wait2::Application.routes.draw do
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+  match '/restful', to: 'static_pages#restful'
+  #get 'static_pages/restful'
 
-  #get "static_pages/rest"
-  match '/rest', to: 'static_pages#rest'
 
   resources :seats
 

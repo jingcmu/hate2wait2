@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
   def help
   end
 
-  def rest
+  def restful
   end
 
 end
