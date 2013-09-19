@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Seat do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { @seat }
+  before { @seat = User.new(name: "Jacky Chen", location_id: 10) }
+  it { should respond_to(:name) }
+  it { should respond_to(:location_id) }
 end

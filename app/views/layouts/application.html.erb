@@ -12,7 +12,7 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container">
-
+    <h1><%= yield(:title) %></h1>
     <%= yield %>
     <%= yield :scripts %>
     <%= render 'layouts/footer' %>
