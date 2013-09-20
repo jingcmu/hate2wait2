@@ -10,6 +10,10 @@ Hate2wait2::Application.routes.draw do
   match '/restful', to: 'static_pages#restful'
   #get 'static_pages/restful'
 
+  get "users/new"
+  get "users/sign_up"
+  match '/signup', to: 'users#new'
+
 
   resources :seats
 
